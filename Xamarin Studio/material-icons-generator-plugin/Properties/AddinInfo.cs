@@ -8,8 +8,10 @@ using Mono.Addins.Description;
 	Version = "1.0"
 )]
 
-[assembly:AddinName ("material-icons-generator-plugin")]
+[assembly:AddinName ("Material icons generator")]
 [assembly:AddinCategory ("IDE extensions")]
-[assembly:AddinDescription ("material-icons-generator-plugin")]
-[assembly:AddinAuthor ("Nika")]
+[assembly:AddinDescription ("This plugin help you to set material design icons to your Android project.")]
+[assembly:AddinAuthor ("Nika Nikabadze")]
 
+[assembly:AddinDependency ("::MonoDevelop.Core", MonoDevelop.BuildInfo.Version)]
+[assembly:AddinDependency ("::MonoDevelop.Ide", MonoDevelop.BuildInfo.Version)]

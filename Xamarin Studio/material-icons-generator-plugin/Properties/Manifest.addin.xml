@@ -1,5 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ExtensionModel>
-	<Runtime>
-	</Runtime>
+    <Extension path = "/MonoDevelop/Ide/Commands/Project">
+		<Command
+			id = "MaterialIconsGenerator.Commands.AddIcon"
+			_description = "Add Material icon"
+			_label = "_Add Material icon"
+			defaultHandler = "MaterialIconsGenerator.Commands.AddIconHandler" />
+	</Extension>
+	
+	<Extension path = "/MonoDevelop/Ide/MainMenu/Project">
+		<CommandItem
+			id = "MaterialIconsGenerator.Commands.AddIcon"
+			insertafter = "MonoDevelop.Ide.Commands.ProjectCommands.AddReference"
+			insertbefore = "ExportSeparator" />
+	</Extension>
+	
+	<Extension path = "/MonoDevelop/Ide/ContextMenu/ProjectPad">
+		<Condition id="ItemType" value="Project">
+			<CommandItem
+				id = "MaterialIconsGenerator.Commands.AddIcon"
+				insertafter = "MonoDevelop.Ide.Commands.ProjectCommands.AddReference"
+				insertbefore = "AddSectionEnd" />
+		</Condition>
+	</Extension>
+
+	<Dependencies>
+		<Addin id="Core" version="4.0"/>
+		<Addin id="Ide" version="4.0"/>
+	</Dependencies>
 </ExtensionModel>
