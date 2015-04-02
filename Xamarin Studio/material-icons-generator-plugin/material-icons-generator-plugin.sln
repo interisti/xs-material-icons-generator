@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "material-icons-generator-pl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publish", "Publish", "{82652C6A-0FD0-44C4-9E28-D6CDE5062FD2}"
 	ProjectSection(SolutionItems) = preProject
-		addin-project.xml = addin-project.xml
+		..\..\addin-project.xml = ..\..\addin-project.xml
 	EndProjectSection
 EndProject
 Global
