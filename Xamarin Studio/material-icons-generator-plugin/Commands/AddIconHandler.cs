@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using MonoDevelop.Components.Commands;
 using MonoDevelop.Ide;
 
@@ -9,10 +10,8 @@ namespace MaterialIconsGenerator.Commands
 		protected override void Run ()
 		{
 			try {
-//				var viewModels = new PackageManagementViewModels ();
-//				IPackageManagementEvents packageEvents = PackageManagementServices.PackageManagementEvents;
-//				var dialog = new ManagePackagesDialog (viewModels.ManagePackagesViewModel, packageEvents);
-//				MessageService.ShowCustomDialog (dialog);
+				var dialog = new MainDialog ();
+				MessageService.ShowCustomDialog (dialog);
 			} catch (Exception ex) {
 				MessageService.ShowException (ex);
 			}
@@ -22,6 +21,8 @@ namespace MaterialIconsGenerator.Commands
 		{
 			base.Update (info);
 
+			info.Visible = IdeApp.ProjectOperations.CurrentSelectedProject
+				.GetProjectTypes ().ToList ().Contains ("MonoDroid");
 		}
 	}
 }
