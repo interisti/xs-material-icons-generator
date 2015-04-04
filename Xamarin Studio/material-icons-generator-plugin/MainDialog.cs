@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using MonoDevelop.Ide;
 using MonoDevelop.Projects;
+using MonoDevelop.Core.ProgressMonitoring;
 
 namespace MaterialIconsGenerator
 {
@@ -49,11 +50,10 @@ namespace MaterialIconsGenerator
 				// start waiting
 				this.GdkWindow.Cursor = new Gdk.Cursor (Gdk.CursorType.Watch);
 
-				var folder = IconLocation.DRAWABLE_HDPI_FOLDER;
 				var color = this.comboColor.ActiveText;
 				var size = this.comboSize.ActiveText;
 				var data = IconDownloader.DownloadIcon (icon, 
-					           folder, 
+					IconLocation.DRAWABLE_HDPI_FOLDER, 
 					           IconColors.FixColor (IconColors.NormalizeColor (color)), 
 					           size);
 				if (!IconColors.IsKnownColor (color))
@@ -155,6 +155,8 @@ namespace MaterialIconsGenerator
 					// add to project
 					this.AddFileToProject (fullPath);
 				}
+
+				this.SaveProject();
 			} catch {
 
 			} finally {
@@ -170,8 +172,11 @@ namespace MaterialIconsGenerator
 		private void AddFileToProject (string filename)
 		{
 			var file = IdeApp.ProjectOperations.CurrentSelectedProject.AddFile (filename, "AndroidResource");
-			// ar mushaobs shenaxva
-//			IdeApp.ProjectOperations.CurrentSelectedProject.Save(IdeApp.Progre
+		}
+
+		private void SaveProject()
+		{
+			IdeApp.ProjectOperations.CurrentSelectedProject.Save (new NullProgressMonitor ());
 		}
 	}
 }
