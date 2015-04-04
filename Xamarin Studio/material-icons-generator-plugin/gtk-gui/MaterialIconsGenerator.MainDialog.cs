@@ -152,9 +152,6 @@ namespace MaterialIconsGenerator
 			w7.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child container.Gtk.Table+TableChild
 			this.comboIcon = global::Gtk.ComboBox.NewText ();
-			this.comboIcon.AppendText (global::Mono.Unix.Catalog.GetString ("action/ic_3d_rotation"));
-			this.comboIcon.AppendText (global::Mono.Unix.Catalog.GetString ("action/ic_accessibility"));
-			this.comboIcon.AppendText (global::Mono.Unix.Catalog.GetString ("action/ic_account_balance"));
 			this.comboIcon.Name = "comboIcon";
 			this.container.Add (this.comboIcon);
 			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.container [this.comboIcon]));

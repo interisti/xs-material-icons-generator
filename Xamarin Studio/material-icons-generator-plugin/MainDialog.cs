@@ -15,14 +15,22 @@ namespace MaterialIconsGenerator
 		public MainDialog ()
 		{
 			this.Build ();
+			this.LoadIcons ();
 			this.LoadColors ();
 		}
 
 		#region Init
 
+		private void LoadIcons ()
+		{
+			foreach (var icon in IconDownloader.KnownIcons.Reverse<string>()) {
+				this.comboIcon.PrependText (icon);
+			}
+		}
+
 		private void LoadColors ()
 		{
-			foreach (var color in IconColors.Colors.Keys.OrderByDescending(x=> x).ToList()) {
+			foreach (var color in IconColors.Colors.Keys) {
 				this.comboColor.PrependText (color);
 			}
 			foreach (var color in IconColors.KnownColors) {
@@ -162,6 +170,8 @@ namespace MaterialIconsGenerator
 		private void AddFileToProject (string filename)
 		{
 			var file = IdeApp.ProjectOperations.CurrentSelectedProject.AddFile (filename, "AndroidResource");
+			// ar mushaobs shenaxva
+//			IdeApp.ProjectOperations.CurrentSelectedProject.Save(IdeApp.Progre
 		}
 	}
 }

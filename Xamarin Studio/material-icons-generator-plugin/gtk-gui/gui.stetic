@@ -203,9 +203,7 @@
               <widget class="Gtk.ComboBox" id="comboIcon">
                 <property name="MemberName" />
                 <property name="IsTextCombo">True</property>
-                <property name="Items">action/ic_3d_rotation
-action/ic_accessibility
-action/ic_account_balance</property>
+                <property name="Items" />
                 <signal name="Changed" handler="OnComboIconChanged" />
               </widget>
               <packing>
