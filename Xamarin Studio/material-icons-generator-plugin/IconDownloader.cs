@@ -36,6 +36,13 @@ namespace MaterialIcons.UI
 			}
 		}
 
+		public static List<string> KnownSizes = new List<string> () {
+			"18dp",
+			"24dp",
+			"36dp",
+			"48dp"
+		};
+
 		public static List<string> KnownIcons = new List<string> () {
 			"action/ic_3d_rotation",
 			"action/ic_accessibility",
@@ -66,6 +73,7 @@ namespace MaterialIcons.UI
 			"action/ic_bookmark_outline",
 			"action/ic_bug_report",
 			"action/ic_cached",
+			"action/ic_check_circle",
 			"action/ic_class",
 			"action/ic_credit_card",
 			"action/ic_dashboard",
@@ -78,7 +86,7 @@ namespace MaterialIcons.UI
 			"action/ic_exit_to_app",
 			"action/ic_explore",
 			"action/ic_extension",
-			"action/ic_face_unlock",
+			"action/ic_face",
 			"action/ic_favorite",
 			"action/ic_favorite_outline",
 			"action/ic_find_in_page",
@@ -395,17 +403,6 @@ namespace MaterialIcons.UI
 			"device/ic_signal_wifi_3_bar",
 			"device/ic_signal_wifi_4_bar",
 			"device/ic_signal_wifi_off",
-			"device/ic_signal_wifi_statusbar_1_bar_26",
-			"device/ic_signal_wifi_statusbar_2_bar_26",
-			"device/ic_signal_wifi_statusbar_3_bar_26",
-			"device/ic_signal_wifi_statusbar_4_bar_26",
-			"device/ic_signal_wifi_statusbar_connected_no_internet_1_26",
-			"device/ic_signal_wifi_statusbar_connected_no_internet_26",
-			"device/ic_signal_wifi_statusbar_connected_no_internet_2_2",
-			"device/ic_signal_wifi_statusbar_connected_no_internet_3_26",
-			"device/ic_signal_wifi_statusbar_connected_no_internet_4_26",
-			"device/ic_signal_wifi_statusbar_not_connected_26",
-			"device/ic_signal_wifi_statusbar_null_26",
 			"device/ic_storage",
 			"device/ic_usb",
 			"device/ic_wifi_lock",
@@ -545,8 +542,8 @@ namespace MaterialIcons.UI
 			"image/ic_compare",
 			"image/ic_control_point",
 			"image/ic_control_point_duplicate",
-			"image/ic_crop_16_9",
 			"image/ic_crop",
+			"image/ic_crop_16_9",
 			"image/ic_crop_3_2",
 			"image/ic_crop_5_4",
 			"image/ic_crop_7_5",
@@ -565,8 +562,8 @@ namespace MaterialIcons.UI
 			"image/ic_exposure_plus_1",
 			"image/ic_exposure_plus_2",
 			"image/ic_exposure_zero",
-			"image/ic_filter_1",
 			"image/ic_filter",
+			"image/ic_filter_1",
 			"image/ic_filter_2",
 			"image/ic_filter_3",
 			"image/ic_filter_4",
@@ -640,8 +637,8 @@ namespace MaterialIcons.UI
 			"image/ic_tag_faces",
 			"image/ic_texture",
 			"image/ic_timelapse",
-			"image/ic_timer_10",
 			"image/ic_timer",
+			"image/ic_timer_10",
 			"image/ic_timer_3",
 			"image/ic_timer_auto",
 			"image/ic_timer_off",

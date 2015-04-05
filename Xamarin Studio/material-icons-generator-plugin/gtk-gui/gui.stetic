@@ -225,11 +225,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsTextCombo">True</property>
-                <property name="Items">18dp
-24dp
-36dp
-48dp</property>
-                <property name="Active">0</property>
+                <property name="Items" />
                 <signal name="Changed" handler="OnComboSizeChanged" />
               </widget>
               <packing>

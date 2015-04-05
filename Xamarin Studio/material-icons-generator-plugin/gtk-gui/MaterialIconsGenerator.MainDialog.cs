@@ -161,13 +161,8 @@ namespace MaterialIconsGenerator
 			w8.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child container.Gtk.Table+TableChild
 			this.comboSize = global::Gtk.ComboBox.NewText ();
-			this.comboSize.AppendText (global::Mono.Unix.Catalog.GetString ("18dp"));
-			this.comboSize.AppendText (global::Mono.Unix.Catalog.GetString ("24dp"));
-			this.comboSize.AppendText (global::Mono.Unix.Catalog.GetString ("36dp"));
-			this.comboSize.AppendText (global::Mono.Unix.Catalog.GetString ("48dp"));
 			this.comboSize.CanFocus = true;
 			this.comboSize.Name = "comboSize";
-			this.comboSize.Active = 0;
 			this.container.Add (this.comboSize);
 			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.container [this.comboSize]));
 			w9.TopAttach = ((uint)(2));

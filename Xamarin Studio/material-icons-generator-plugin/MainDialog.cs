@@ -18,6 +18,7 @@ namespace MaterialIconsGenerator
 			this.Build ();
 			this.LoadIcons ();
 			this.LoadColors ();
+			this.LoadSizes ();
 		}
 
 		#region Init
@@ -40,6 +41,14 @@ namespace MaterialIconsGenerator
 			this.comboColor.Active = 0;
 		}
 
+		private void LoadSizes ()
+		{
+			foreach (var color in IconDownloader.KnownSizes.Reverse<string>()) {
+				this.comboSize.PrependText (color);
+			}
+			this.comboSize.Active = 0;
+		}
+
 		private void SetPreview ()
 		{
 
@@ -53,7 +62,7 @@ namespace MaterialIconsGenerator
 				var color = this.comboColor.ActiveText;
 				var size = this.comboSize.ActiveText;
 				var data = IconDownloader.DownloadIcon (icon, 
-					IconLocation.DRAWABLE_HDPI_FOLDER, 
+					           IconLocation.DRAWABLE_HDPI_FOLDER, 
 					           IconColors.FixColor (IconColors.NormalizeColor (color)), 
 					           size);
 				if (!IconColors.IsKnownColor (color))
@@ -156,7 +165,7 @@ namespace MaterialIconsGenerator
 					this.AddFileToProject (fullPath);
 				}
 
-				this.SaveProject();
+				this.SaveProject ();
 			} catch {
 
 			} finally {
@@ -174,7 +183,7 @@ namespace MaterialIconsGenerator
 			var file = IdeApp.ProjectOperations.CurrentSelectedProject.AddFile (filename, "AndroidResource");
 		}
 
-		private void SaveProject()
+		private void SaveProject ()
 		{
 			IdeApp.ProjectOperations.CurrentSelectedProject.Save (new NullProgressMonitor ());
 		}
