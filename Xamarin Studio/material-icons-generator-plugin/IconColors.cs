@@ -7,14 +7,25 @@ namespace MaterialIcons.UI
 {
 	public static class IconColors
 	{
+		private static bool ISRunningOnWindows ()
+		{
+			int p = (int)Environment.OSVersion.Platform;
+			if ((p == 4) || (p == 6) || (p == 128)) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+
 		public static byte[] ReplaceColor (byte[] data, Color replacementColor)
 		{
+			var ignoredColor = ISRunningOnWindows () ? Color.FromArgb (0, 0, 0, 0) : Color.FromArgb (255, 0, 0, 0);
 			using (var ms = new MemoryStream (data)) {
 				var bitmap = new Bitmap (ms);
 				for (var y = 0; y < bitmap.Height; y++) {
 					for (var x = 0; x < bitmap.Width; x++) {
 						var originalPixel = bitmap.GetPixel (x, y);
-						if (originalPixel != Color.Transparent) {
+						if (originalPixel != ignoredColor) {
 							bitmap.SetPixel (x, y, Color.FromArgb (originalPixel.A, replacementColor));
 						}
 					}
