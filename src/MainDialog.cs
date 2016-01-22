@@ -35,7 +35,7 @@ namespace MaterialIconsGenerator
 			foreach (var color in IconColors.Colors.Keys) {
 				this.comboColor.PrependText (color);
 			}
-			foreach (var color in IconColors.KnownColors) {
+			foreach (var color in IconColors.KnownColors.Reverse<string>()) {
 				this.comboColor.PrependText (color);
 			}
 			this.comboColor.Active = 0;
@@ -46,7 +46,7 @@ namespace MaterialIconsGenerator
 			foreach (var color in IconDownloader.KnownSizes.Reverse<string>()) {
 				this.comboSize.PrependText (color);
 			}
-			this.comboSize.Active = 0;
+			this.comboSize.Active = 1;
 		}
 
 		private void SetPreview ()
@@ -189,4 +189,3 @@ namespace MaterialIconsGenerator
 		}
 	}
 }
-

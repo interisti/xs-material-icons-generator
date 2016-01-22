@@ -1,5 +1,5 @@
-Xamarin Studio/material-icons-generator-plugin/obj/*
-Xamarin Studio/material-icons-generator-plugin/bin/*
-Xamarin Studio/material-icons-generator-plugin/material-icons-generator-plugin.userprefs
-___FILES/*
-Xamarin Studio/material-icons-generator-plugin/packages/*
+obj/
+bin/
+material-icons-generator-plugin.userprefs
+___FILES/
+packages/

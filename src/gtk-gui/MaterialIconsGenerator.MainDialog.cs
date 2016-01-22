@@ -129,6 +129,7 @@ namespace MaterialIconsGenerator
 			this.checkxxxhdpi.CanFocus = true;
 			this.checkxxxhdpi.Name = "checkxxxhdpi";
 			this.checkxxxhdpi.Label = global::Mono.Unix.Catalog.GetString ("xxxhdpi");
+			this.checkxxxhdpi.Active = true;
 			this.checkxxxhdpi.DrawIndicator = true;
 			this.checkxxxhdpi.UseUnderline = true;
 			this.container.Add (this.checkxxxhdpi);
@@ -271,8 +272,8 @@ namespace MaterialIconsGenerator
 			this.buttonCancel.Name = "buttonCancel";
 			this.buttonCancel.UseStock = true;
 			this.buttonCancel.UseUnderline = true;
-			this.buttonCancel.Label = "gtk-cancel";
-			this.AddActionWidget (this.buttonCancel, -6);
+			this.buttonCancel.Label = "gtk-close";
+			this.AddActionWidget (this.buttonCancel, -7);
 			global::Gtk.ButtonBox.ButtonBoxChild w20 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w17 [this.buttonCancel]));
 			w20.Position = 2;
 			w20.Expand = false;
