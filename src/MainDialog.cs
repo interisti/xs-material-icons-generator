@@ -16,16 +16,23 @@ namespace MaterialIconsGenerator
 		public MainDialog ()
 		{
 			this.Build ();
+
 			this.LoadIcons ();
 			this.LoadColors ();
 			this.LoadSizes ();
+
+			this.comboSize.Changed += this.OnComboSizeChanged;
+			this.comboIcon.Changed += this.OnComboIconChanged;
+			this.comboColor.Changed += this.OnComboColorChanged;
+			this.buttonSource.Clicked += this.OnButtonSourceClicked;
+			this.buttonOk.Clicked += this.OnButtonAddClicked;
 		}
 
 		#region Init
 
 		private void LoadIcons ()
 		{
-			foreach (var icon in IconDownloader.KnownIcons.Reverse<string>()) {
+			foreach (var icon in IconDownloader.DownloadIconsFromRepo().Reverse<string>()) {
 				this.comboIcon.PrependText (icon);
 			}
 		}
@@ -51,7 +58,6 @@ namespace MaterialIconsGenerator
 
 		private void SetPreview ()
 		{
-
 			try {
 				var icon = this.comboIcon.ActiveText;
 				if (string.IsNullOrEmpty (icon))
