@@ -8,6 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>MaterialIconsGenerator</RootNamespace>
     <AssemblyName>material-icons-generator-plugin</AssemblyName>
+    <ReleaseVersion>1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="addin-project.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -72,6 +74,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="icons\" />
-    <Folder Include="Google\" />
   </ItemGroup>
 </Project>

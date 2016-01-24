@@ -6,7 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/material-icons-generator-plugin.dll" internal="true" />
+    <widget-library name="../bin/Release/material-icons-generator-plugin.dll" internal="true" />
   </import>
   <widget class="Gtk.Dialog" id="MaterialIconsGenerator.MainDialog" design-size="550 293">
     <property name="MemberName" />
