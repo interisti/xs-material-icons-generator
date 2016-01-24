@@ -1,7 +1,7 @@
 <AddinProject appVersion="5.0">
 	<Project platforms="Mac Linux Win32">
-		<AddinFile>bin/Release/material-icons-generator-plugin.dll</AddinFile>
-		<BuildFile>material-icons-generator-plugin.sln</BuildFile>
+		<AddinFile>src/bin/Release/material-icons-generator-plugin.dll</AddinFile>
+		<BuildFile>src/material-icons-generator-plugin.sln</BuildFile>
 		<BuildConfiguration>Release</BuildConfiguration>
 	</Project>
 </AddinProject>
