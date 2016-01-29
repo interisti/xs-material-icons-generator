@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ExtensionModel>
+	<Runtime>
+		<Import assembly="Newtonsoft.Json.dll" />
+	</Runtime>
+
     <Extension path = "/MonoDevelop/Ide/Commands/Project">
 		<Command
 			id = "MaterialIconsGenerator.Commands.AddIcon"
