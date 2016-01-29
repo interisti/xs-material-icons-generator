@@ -55,7 +55,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Posix" />
+    <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -77,4 +77,11 @@
   <ItemGroup>
     <Folder Include="icons\" />
   </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <GtkDesignInfo gettextClass="Mono.Addins.AddinManager.CurrentLocalizer" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>

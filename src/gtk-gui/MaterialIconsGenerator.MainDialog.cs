@@ -45,7 +45,7 @@ namespace MaterialIconsGenerator
 			global::Stetic.Gui.Initialize (this);
 			// Widget MaterialIconsGenerator.MainDialog
 			this.Name = "MaterialIconsGenerator.MainDialog";
-			this.Title = global::Mono.Unix.Catalog.GetString ("Material Icon Generator");
+			this.Title = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("Material Icon Generator");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			this.Modal = true;
 			this.Resizable = false;
@@ -64,7 +64,7 @@ namespace MaterialIconsGenerator
 			this.checkhdpi = new global::Gtk.CheckButton ();
 			this.checkhdpi.CanFocus = true;
 			this.checkhdpi.Name = "checkhdpi";
-			this.checkhdpi.Label = global::Mono.Unix.Catalog.GetString ("hdpi");
+			this.checkhdpi.Label = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("hdpi");
 			this.checkhdpi.Active = true;
 			this.checkhdpi.DrawIndicator = true;
 			this.checkhdpi.UseUnderline = true;
@@ -80,7 +80,7 @@ namespace MaterialIconsGenerator
 			this.checkmdpi = new global::Gtk.CheckButton ();
 			this.checkmdpi.CanFocus = true;
 			this.checkmdpi.Name = "checkmdpi";
-			this.checkmdpi.Label = global::Mono.Unix.Catalog.GetString ("mdpi");
+			this.checkmdpi.Label = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("mdpi");
 			this.checkmdpi.Active = true;
 			this.checkmdpi.DrawIndicator = true;
 			this.checkmdpi.UseUnderline = true;
@@ -96,7 +96,7 @@ namespace MaterialIconsGenerator
 			this.checkxhdpi = new global::Gtk.CheckButton ();
 			this.checkxhdpi.CanFocus = true;
 			this.checkxhdpi.Name = "checkxhdpi";
-			this.checkxhdpi.Label = global::Mono.Unix.Catalog.GetString ("xhdpi");
+			this.checkxhdpi.Label = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("xhdpi");
 			this.checkxhdpi.Active = true;
 			this.checkxhdpi.DrawIndicator = true;
 			this.checkxhdpi.UseUnderline = true;
@@ -112,7 +112,7 @@ namespace MaterialIconsGenerator
 			this.checkxxhdpi = new global::Gtk.CheckButton ();
 			this.checkxxhdpi.CanFocus = true;
 			this.checkxxhdpi.Name = "checkxxhdpi";
-			this.checkxxhdpi.Label = global::Mono.Unix.Catalog.GetString ("xxhdpi");
+			this.checkxxhdpi.Label = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("xxhdpi");
 			this.checkxxhdpi.Active = true;
 			this.checkxxhdpi.DrawIndicator = true;
 			this.checkxxhdpi.UseUnderline = true;
@@ -128,7 +128,7 @@ namespace MaterialIconsGenerator
 			this.checkxxxhdpi = new global::Gtk.CheckButton ();
 			this.checkxxxhdpi.CanFocus = true;
 			this.checkxxxhdpi.Name = "checkxxxhdpi";
-			this.checkxxxhdpi.Label = global::Mono.Unix.Catalog.GetString ("xxxhdpi");
+			this.checkxxxhdpi.Label = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("xxxhdpi");
 			this.checkxxxhdpi.Active = true;
 			this.checkxxxhdpi.DrawIndicator = true;
 			this.checkxxxhdpi.UseUnderline = true;
@@ -197,7 +197,7 @@ namespace MaterialIconsGenerator
 			// Container child container.Gtk.Table+TableChild
 			this.label13 = new global::Gtk.Label ();
 			this.label13.Name = "label13";
-			this.label13.LabelProp = global::Mono.Unix.Catalog.GetString ("Icon:");
+			this.label13.LabelProp = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("Icon:");
 			this.container.Add (this.label13);
 			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.container [this.label13]));
 			w12.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -205,7 +205,7 @@ namespace MaterialIconsGenerator
 			// Container child container.Gtk.Table+TableChild
 			this.label14 = new global::Gtk.Label ();
 			this.label14.Name = "label14";
-			this.label14.LabelProp = global::Mono.Unix.Catalog.GetString ("Color:");
+			this.label14.LabelProp = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("Color:");
 			this.container.Add (this.label14);
 			global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.container [this.label14]));
 			w13.TopAttach = ((uint)(1));
@@ -215,7 +215,7 @@ namespace MaterialIconsGenerator
 			// Container child container.Gtk.Table+TableChild
 			this.label15 = new global::Gtk.Label ();
 			this.label15.Name = "label15";
-			this.label15.LabelProp = global::Mono.Unix.Catalog.GetString ("Size");
+			this.label15.LabelProp = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("Size");
 			this.container.Add (this.label15);
 			global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.container [this.label15]));
 			w14.TopAttach = ((uint)(2));
@@ -225,7 +225,7 @@ namespace MaterialIconsGenerator
 			// Container child container.Gtk.Table+TableChild
 			this.label16 = new global::Gtk.Label ();
 			this.label16.Name = "label16";
-			this.label16.LabelProp = global::Mono.Unix.Catalog.GetString ("Name:");
+			this.label16.LabelProp = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("Name:");
 			this.container.Add (this.label16);
 			global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.container [this.label16]));
 			w15.TopAttach = ((uint)(3));
@@ -248,7 +248,7 @@ namespace MaterialIconsGenerator
 			this.buttonSource.CanFocus = true;
 			this.buttonSource.Name = "buttonSource";
 			this.buttonSource.UseUnderline = true;
-			this.buttonSource.Label = global::Mono.Unix.Catalog.GetString ("Icons Source");
+			this.buttonSource.Label = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("Icons Source");
 			w17.Add (this.buttonSource);
 			global::Gtk.ButtonBox.ButtonBoxChild w18 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w17 [this.buttonSource]));
 			w18.Expand = false;
@@ -259,7 +259,7 @@ namespace MaterialIconsGenerator
 			this.buttonOk.CanFocus = true;
 			this.buttonOk.Name = "buttonOk";
 			this.buttonOk.UseUnderline = true;
-			this.buttonOk.Label = global::Mono.Unix.Catalog.GetString ("Add");
+			this.buttonOk.Label = global::Mono.Addins.AddinManager.CurrentLocalizer.GetString ("Add");
 			w17.Add (this.buttonOk);
 			global::Gtk.ButtonBox.ButtonBoxChild w19 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w17 [this.buttonOk]));
 			w19.Position = 1;
