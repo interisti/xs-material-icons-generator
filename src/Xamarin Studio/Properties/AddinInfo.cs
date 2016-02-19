@@ -5,7 +5,8 @@ using Mono.Addins.Description;
 [assembly:Addin (
 	"material-icons-generator-plugin", 
 	Namespace = "MaterialIconsGenerator",
-	Version = "1.3"
+	Version = "1.3",
+	Url = "https://github.com/interisti/material-icons-generator-plugin"
 )]
 
 [assembly:AddinName ("Material icons generator")]
