@@ -1,9 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace MaterialIcons.UI
 {
-	public static class IconLocation
+    public static class IconLocation
 	{
 		public const string RESOURCES_FOLDER = "Resources";
 		public const string ICON_EXTENSION = ".png";

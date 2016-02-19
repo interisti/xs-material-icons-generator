@@ -1,11 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
 namespace MaterialIcons.UI
 {
-	public static class IconDownloader
+    public static class IconDownloader
 	{
 		public static string GetIconUrl (string iconFull, string folder, string color, string size)
 		{
