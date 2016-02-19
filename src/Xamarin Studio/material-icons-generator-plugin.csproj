@@ -34,6 +34,15 @@
     <Compile Include="Commands\AddIconHandler.cs" />
     <Compile Include="MainDialog.cs" />
     <Compile Include="gtk-gui\MaterialIconsGenerator.MainDialog.cs" />
+    <Compile Include="..\Shared\IconColors.cs">
+      <Link>Shared\IconColors.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\IconDownloader.cs">
+      <Link>Shared\IconDownloader.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\IconLocation.cs">
+      <Link>Shared\IconLocation.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Manifest.addin.xml" />
@@ -69,12 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="IconColors.cs" />
-    <Compile Include="IconDownloader.cs" />
-    <Compile Include="IconLocation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="icons\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

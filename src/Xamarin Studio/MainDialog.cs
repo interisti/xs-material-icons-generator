@@ -32,26 +32,26 @@ namespace MaterialIconsGenerator
 
 		private void LoadIcons ()
 		{
-			foreach (var icon in IconDownloader.DownloadIconsFromRepo().Reverse<string>()) {
-				this.comboIcon.PrependText (icon);
+			foreach (var icon in IconDownloader.DownloadIconsFromRepo()) {
+				this.comboIcon.AppendText (icon);
 			}
 		}
 
 		private void LoadColors ()
 		{
-			foreach (var color in IconColors.Colors.Keys) {
-				this.comboColor.PrependText (color);
+			foreach (var color in IconColors.KnownColors) {
+				this.comboColor.AppendText (color);
 			}
-			foreach (var color in IconColors.KnownColors.Reverse<string>()) {
-				this.comboColor.PrependText (color);
+			foreach (var color in IconColors.Colors.Keys) {
+				this.comboColor.AppendText (color);
 			}
 			this.comboColor.Active = 0;
 		}
 
 		private void LoadSizes ()
 		{
-			foreach (var color in IconDownloader.KnownSizes.Reverse<string>()) {
-				this.comboSize.PrependText (color);
+			foreach (var color in IconDownloader.KnownSizes) {
+				this.comboSize.AppendText (color);
 			}
 			this.comboSize.Active = 1;
 		}
@@ -74,8 +74,6 @@ namespace MaterialIconsGenerator
 				if (!IconColors.IsKnownColor (color))
 					data = IconColors.ReplaceColor (data, IconColors.GetColor (color));
 				this.imagePreview.Pixbuf = new Gdk.Pixbuf (data);
-			} catch {
-
 			} finally {
 				this.GdkWindow.Cursor = new Gdk.Cursor (Gdk.CursorType.LeftPtr);
 			}
@@ -164,7 +162,8 @@ namespace MaterialIconsGenerator
 						data = IconColors.ReplaceColor (data, IconColors.GetColor (color));
 					// save
 					var baseDir = this.GetProjectDir ();
-					var fullPath = System.IO.Path.Combine (baseDir, IconLocation.RESOURCES_FOLDER, folder, name + IconLocation.ICON_EXTENSION);
+					var fullPath = System.IO.Path.Combine (baseDir, IconLocation.RESOURCES_FOLDER, folder, 
+						               name + IconLocation.ICON_EXTENSION);
 					// save to folder
 					IconLocation.SaveIcon (data, fullPath);
 					// add to project
@@ -172,8 +171,6 @@ namespace MaterialIconsGenerator
 				}
 
 				this.SaveProject ();
-			} catch {
-
 			} finally {
 				this.GdkWindow.Cursor = new Gdk.Cursor (Gdk.CursorType.LeftPtr);
 			}
