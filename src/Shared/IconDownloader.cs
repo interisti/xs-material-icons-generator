@@ -26,7 +26,7 @@ namespace MaterialIcons.UI
 		public static byte[] DownloadIcon (string icon, string folder, string color, string size)
 		{
 			using (var webCl = new System.Net.WebClient ()) {
-				return webCl.DownloadData (IconDownloader.GetIconUrl (icon, 
+				return webCl.DownloadData (GetIconUrl(icon, 
 					folder, 
 					IconColors.FixColor (IconColors.NormalizeColor (color)), 
 					size));

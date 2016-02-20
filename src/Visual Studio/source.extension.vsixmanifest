@@ -5,7 +5,7 @@
     <DisplayName>Material icons generator</DisplayName>
     <Description xml:space="preserve">This plugin help you to set material design icons to your Android project</Description>
     <MoreInfo>https://github.com/interisti/material-icons-generator-plugin</MoreInfo>
-    <Icon>Resources\icon.png</Icon>
+    <Icon>Resources\AddIconCommandPackage.ico</Icon>
     <PreviewImage>Resources\icon.png</PreviewImage>
     <Tags>xamarin, android, material</Tags>
   </Metadata>

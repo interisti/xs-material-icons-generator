@@ -1,5 +1,5 @@
 <AddinProject appVersion="5.0">
-	<Project platforms="Mac Win32">
+	<Project platforms="Mac Linux Win32">
 		<AddinFile>src/Xamarin Studio/bin/Release/material-icons-generator-plugin.dll</AddinFile>
 		<BuildFile>src/Xamarin Studio/material-icons-generator-plugin.sln</BuildFile>
 		<BuildConfiguration>Release</BuildConfiguration>
