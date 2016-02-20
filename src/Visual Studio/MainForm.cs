@@ -14,18 +14,25 @@ namespace MaterialIconsGenerator
 {
     public partial class MainForm : Form
     {
+        private ProgressIndicator progressIndicator;
+
         public MainForm()
         {
             InitializeComponent();
+
+            this.progressIndicator = new ProgressIndicator(AddIconCommand.Instance.StatusBar);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO start waiting
+            // start waiting
+            this.progressIndicator.DisplayProgress("Downloading icons from repo ...");
+
             this.LoadIcons();
             this.LoadColors();
             this.LoadSizes();
-            // TODO stop waiting
+            // stop waiting
+            this.progressIndicator.ClearProgress();
 
             this.iconComboBox.SelectedIndexChanged += ConfigurationComboBox_SelectedIndexChanged;
             this.colorComboBox.SelectedIndexChanged += ConfigurationComboBox_SelectedIndexChanged;
@@ -76,7 +83,8 @@ namespace MaterialIconsGenerator
                 var icon = this.SelectedIcon;
                 if (string.IsNullOrEmpty(icon))
                     return;
-                // TODO start waiting
+                // start waiting
+                this.progressIndicator.DisplayProgress("Downloading icon ...");
 
                 var color = this.SelectedColor;
                 var size = this.SelectedSize;
@@ -89,11 +97,18 @@ namespace MaterialIconsGenerator
                 this.previewPictureBox.Image = Image.FromStream(new MemoryStream(data));
 
                 this.SetName();
+                throw new Exception("test ex");
+            }
+            catch (Exception ex)
+            {
+                AddIconCommand.Instance.OutputPane.OutputString(ex.Message + Environment.NewLine);
+                AddIconCommand.Instance.OutputPane.OutputString(ex.StackTrace + Environment.NewLine);
+                AddIconCommand.Instance.OutputPane.Activate();
             }
             finally
             {
-                // TODO stop waiting
-
+                // stop waiting
+                this.progressIndicator.ClearProgress();
             }
         }
 
@@ -105,7 +120,8 @@ namespace MaterialIconsGenerator
                 if (string.IsNullOrEmpty(icon))
                     return;
 
-                // TODO start waiting
+                // start waiting
+                this.progressIndicator.DisplayProgress("Downloading icons ...");
 
                 var folders = new List<string>();
                 if (this.hdpiCheckBox.Checked) folders.Add(IconLocation.DRAWABLE_HDPI_FOLDER);
@@ -137,9 +153,16 @@ namespace MaterialIconsGenerator
 
                 this.SaveProject();
             }
+            catch (Exception ex)
+            {
+                AddIconCommand.Instance.OutputPane.OutputString(ex.Message + Environment.NewLine);
+                AddIconCommand.Instance.OutputPane.OutputString(ex.StackTrace + Environment.NewLine);
+                AddIconCommand.Instance.OutputPane.Activate();
+            }
             finally
             {
-                // TODO stop waiting
+                // stop waiting
+                this.progressIndicator.ClearProgress();
             }
         }
 
@@ -167,14 +190,15 @@ namespace MaterialIconsGenerator
 
         private EnvDTE.Project GetActiveProject()
         {
-            var dteService = (DTE)AddIconCommand.Instance.ServiceProvider.GetService(typeof(DTE));
+            var dteService = AddIconCommand.Instance.DTE;
             return ((object[])dteService.ActiveSolutionProjects)
                 .Select(x => (EnvDTE.Project)x)
                 .FirstOrDefault();
         }
 
+
         #region Events
-        
+
         private void ConfigurationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SetPreview();

@@ -9,6 +9,8 @@ using System.ComponentModel.Design;
 using System.Globalization;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using EnvDTE;
+using Microsoft.VisualStudio;
 
 namespace MaterialIconsGenerator
 {
@@ -74,6 +76,55 @@ namespace MaterialIconsGenerator
                 return this.package;
             }
         }
+
+        private IVsStatusbar statusBar;
+        public IVsStatusbar StatusBar
+        {
+            get
+            {
+                if (this.statusBar == null)
+                    this.statusBar = this.ServiceProvider.GetService(typeof(SVsStatusbar)) as IVsStatusbar;
+
+                return this.statusBar;
+            }
+        }
+
+        private DTE dte;
+        public DTE DTE
+        {
+            get
+            {
+                if (this.dte == null)
+                    this.dte = this.ServiceProvider.GetService(typeof(DTE)) as DTE;
+
+                return this.dte;
+            }
+        }
+
+        private IVsOutputWindow outputWindow;
+        public IVsOutputWindow OutputWindow
+        {
+            get
+            {
+                if (this.outputWindow == null)
+                    this.outputWindow = Package.GetGlobalService(typeof(SVsOutputWindow)) as IVsOutputWindow;
+
+                return this.outputWindow;
+            }
+        }
+
+        private IVsOutputWindowPane outputPane;
+        public IVsOutputWindowPane OutputPane
+        {
+            get
+            {
+                if (this.outputPane == null)
+                    this.outputPane = this.ServiceProvider.GetService(typeof(SVsGeneralOutputWindowPane)) as IVsOutputWindowPane;
+
+                return this.outputPane;
+            }
+        }
+
 
         /// <summary>
         /// Initializes the singleton instance of the command.
