@@ -6,7 +6,7 @@ This plugin help you to set material design icons to your Android project in Xam
 ## Installation
 * Xamarin Studio: Install from "add-in Manager": Tools -> Add-in manager
 
-## Visual Studio Version
+## Visual Studio
 * [vs-material-icons-generator](https://github.com/interisti/vs-material-icons-generator)
   
 
